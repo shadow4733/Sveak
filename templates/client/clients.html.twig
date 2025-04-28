@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Список клиентов{% endblock %}
+
+{% block body %}
+    <h1>Список клиентов</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Телефон</th>
+            <th>Email</th>
+            <th>Образование</th>
+            <th>Скоринг</th>
+            <th>Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for client in clients %}
+            <tr>
+                <td>{{ client.id }}</td>
+                <td>{{ client.firstName }}</td>
+                <td>{{ client.lastName }}</td>
+                <td>{{ client.phone }}</td>
+                <td>{{ client.email }}</td>
+                <td>{{ client.education }}</td>
+                <td>{{ client.score }}</td>
+                <td>
+                    <a href="{{ path('client_edit', {'id': client.id}) }}" class="btn btn-sm btn-primary">
+                        Редактировать
+                    </a>
+                    <a href="{{ path('client_show', {'id': client.id}) }}" class="btn btn-sm btn-info">
+                        Просмотр
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {# Пагинация #}
+    <div class="pagination">
+        {% if current_page > 1 %}
+            <a href="{{ path('client_list', {'page': current_page - 1}) }}" class="btn btn-primary">
+                Предыдущая
+            </a>
+        {% endif %}
+
+        <a href="{{ path('client_list', {'page': current_page + 1}) }}" class="btn btn-primary">
+            Следующая
+        </a>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Редактировать клиента{% endblock %}
+
+{% block body %}
+    <h1>Редактировать клиента</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn btn-primary mt-3">Сохранить</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('client_list') }}" class="btn btn-secondary mt-3">Назад к списку</a>
+{% endblock %}

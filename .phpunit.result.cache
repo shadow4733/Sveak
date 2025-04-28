@@ -1,0 +1,1 @@
+{"version":1,"defects":[],"times":{"App\\Tests\\Service\\ScoringServiceTest::testCalculateScoreWithValidData":0.393,"App\\Tests\\Service\\ScoringServiceTest::testCalculateScoreWithOtherPhoneOperator":0,"App\\Tests\\Service\\ScoringServiceTest::testCalculateScoreWithEmptyConsent":0,"App\\Tests\\Service\\ScoringServiceTest::testExplainScore":0}}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Карточка клиента{% endblock %}
+
+{% block body %}
+    <h1>Карточка клиента</h1>
+
+    <div class="card p-4 mb-4">
+        <h3>{{ client.firstName }} {{ client.lastName }}</h3>
+        <p><strong>ID:</strong> {{ client.id }}</p>
+        <p><strong>Телефон:</strong> {{ client.phone }}</p>
+        <p><strong>Email:</strong> {{ client.email }}</p>
+        <p><strong>Образование:</strong> {{ client.education }}</p>
+        <p><strong>Согласие:</strong> {{ client.consent ? 'Да' : 'Нет' }}</p>
+        <p><strong>Скоринг:</strong> {{ client.score }}</p>
+
+        <a href="{{ path('client_edit', { id: client.id }) }}" class="btn btn-primary mt-3">Редактировать</a>
+        <a href="{{ path('client_list') }}" class="btn btn-secondary mt-3">Назад к списку</a>
+    </div>
+{% endblock %}
